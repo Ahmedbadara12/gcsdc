@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "arabic";
+  src: url(../fonts/Wafeq-Regular.otf);
+}
+
+
+body {
+  font-family: "arabic"; 
+  font-size: 16px;
+}
