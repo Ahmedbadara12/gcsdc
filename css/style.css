@@ -4,36 +4,33 @@
   src: url(../fonts/Wafeq-Regular.otf);
 }
 
-
-body  {
-  font-family: "arabic"; 
+ 
+body{ 
+  font-family: "arabic";
   font-size: 16px; 
-  overflow: auto; /* Ensures the blur doesn't overflow */
+  overflow: auto; 
+  z-index: 1;
+
+}
+.bg-home {
+  
+  position: relative; /* Required for pseudo-element positioning */
+  z-index: 1; /* Ensure content is above the blurred background */ 
+  min-height: 100vh;
 }
 
-body::before  {
+.bg-home::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0; 
-  width: 100%; 
+  left: 0; 
+  bottom: 0;
+  width: 100%;
   height: 100%;
   background-image: url(../images/audio-headset-used-by-call-center-agents-help-clients-telecommunication-with-technology-empty-customer-service-workstation-with-headphones-computers-modern-gadgets.jpg);
-  background-position: 0 0; 
-  background-size: cover;   
+  background-position: 0 0;
+  background-size: cover;
   background-repeat: repeat;
-  filter: blur(10px); /* Adjust the blur intensity as needed */
-  z-index: -1; /* Ensures the pseudo-element stays behind the content */
-} 
-body::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
- /* Semi-transparent white overlay */
-  z-index: -1; /* Ensures the overlay stays behind the content */
+  filter: blur(5px); /* Apply blur to the background only */
+  z-index: -1; /* Place the blurred background behind the content */
 }
